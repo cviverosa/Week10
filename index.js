@@ -9,20 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
   addButton.addEventListener("click", function () {
     const movie = movieInput.value;
     const year = yearInput.value;
-
+    //If the string is empty, no input, addbutton will not do anythin
     if (movie.trim() !== "" && year.trim() !== "") {
       const newRow = table.insertRow();
 
-      const rankCell = newRow.insertCell();
+      const rankCell = newRow.insertCell(); //increases the rank value for each cell added into new row
       const titleCell = newRow.insertCell();
       const yearCell = newRow.insertCell();
 
       rankCell.textContent = currentRank++;
       titleCell.textContent = movie;
       yearCell.textContent = year;
-
-      const inputGroup = document.createElement("div");
-      inputGroup.className = "input-group";
 
       // Clear input fields
       movieInput.value = "";
